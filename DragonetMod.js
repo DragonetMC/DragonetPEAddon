@@ -706,10 +706,15 @@ Block.setShape(150, 0, 0, 0, 1, 0.2, 1);
 
 /* Networking */
 //Contants
-var ACTION_START_SERVICE = "dragonetpe.START_SERVICE";
+var BROADCAST_NAME = "dragonetpe.BROADCAST";
+var ACTION_START_SERVICE = 1;
+var ACTION_CONNECT_SERVER = 2;
+var ACTION_DISCONNECT_SERVER = 3;
 
 var mainActivity = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var context = mainActivity.getApplicationConext();
 
 //Initialize DragonetPE Networking Service
-var intentStartService = new android.content.Intent("");
+var intentStartService = new android.content.Intent(BROADCAST_NAME);
+intentStartService.getExtras().putInt("action", ACTION_START_SERVICE);
+context.startService(intentStartService);
