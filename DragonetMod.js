@@ -705,4 +705,11 @@ Block.setDestroyTime(150,0);
 Block.setShape(150, 0, 0, 0, 1, 0.2, 1);
 
 /* Networking */
-//TODO
+//Contants
+var ACTION_START_SERVICE = "dragonetpe.START_SERVICE";
+
+var mainActivity = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var context = mainActivity.getApplicationConext();
+
+//Initialize DragonetPE Networking Service
+var intentStartService = new android.content.Intent("");

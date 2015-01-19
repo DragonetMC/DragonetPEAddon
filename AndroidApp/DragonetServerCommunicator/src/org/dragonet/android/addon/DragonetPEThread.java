@@ -1,29 +1,40 @@
 package org.dragonet.android.addon;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.net.InetSocketAddress;
-import java.net.Socket;
+
+import org.dragonet.android.addon.net.DragonetPESocket;
+
+import android.widget.Toast;
 
 public class DragonetPEThread extends Thread{
 
+	private DragonetPEService service;
 	private InetSocketAddress remoteAddress;
-	private Socket socket;
+	private DragonetPESocket socket;
 	
-	private DataInputStream dis;
-	private DataOutputStream dos;
-	
-	private boolean isRecevingHeader;
-	private short packetLength;
-	
-	public DragonetPEThread(String ip, int port) {
-		this.remoteAddress = new InetSocketAddress(ip, port);
-		this.packetLength = -1;
+	public DragonetPEThread(DragonetPEService service) {
+		this.service = service;
 	}
 	
 	@Override
 	public void run() {
-		//TODO
+		Toast.makeText(this.service, "DragonetPE Addon Started! ", Toast.LENGTH_SHORT).show();
+		while(this.service.isRunning()){
+			//TODO
+		}
+		Toast.makeText(this.service, "DragonetPE Addon Stopped! ", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void onJoinServer(String ip, int port){
+		//TODO: Disconnect current and create a new socket
+	}
+	
+	
+	
+	//Getters
+	
+	public DragonetPEService getService() {
+		return service;
 	}
 	
 	public InetSocketAddress getRemoteAddress() {

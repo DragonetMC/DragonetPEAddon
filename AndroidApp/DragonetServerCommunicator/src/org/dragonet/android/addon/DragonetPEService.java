@@ -7,18 +7,46 @@ import android.widget.Toast;
 
 public class DragonetPEService extends Service {
 
+	private DragonetPEThread thread;
+	private boolean isRunnning;
+	
 	@Override
 	public void onCreate() {
+		this.createThread();
 	}
 	
 	@Override
 	public void onStart(Intent intent, int startId) {
-		if(!intent.getExtras().containsKey("ip") || !intent.getExtras().containsKey("port")){
+		if(!intent.getExtras().containsKey("action")){
 			return;
 		}
-		String ip = intent.getExtras().getString("ip");
-		int port = intent.getExtras().getInt("port");
-		Toast.makeText(this, "DragonetPEAddon: Connecting to " + ip + ":" + port + "... ", Toast.LENGTH_SHORT).show();
+		this.createThread();
+		int action = intent.getExtras().getInt("action");
+		switch(action){
+		case DragonetPEActions.START_SERVICE:
+			break;
+		case DragonetPEActions.CONNECT_SERVER:
+			String ip = intent.getExtras().getString("ip");
+			int port = intent.getExtras().getInt("port");
+			Toast.makeText(this, "DragonetPEAddon: Connecting to " + ip + ":" + port + "... ", Toast.LENGTH_SHORT).show();
+			break;
+		}
+	}
+	
+	private void createThread(){
+		if(this.thread == null){
+			this.isRunnning = true;
+			this.thread = new DragonetPEThread(this);
+		}
+	}
+	
+	public boolean isRunning(){
+		return this.isRunnning;
+	}
+	
+	@Override
+	public void onDestroy() {
+		this.isRunnning = false;
 	}
 	
 	@Override
