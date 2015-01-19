@@ -703,3 +703,6 @@ Block.setShape(149, 0, 0, 0, 1, 0.2, 1);
 Block.defineBlock(150,"Redstone Coparator (On)",[["stone_slab",0],["redstone_dust_line_overlay",0],["stone_slab",0],["stone_slab",0],["stone_slab",0],["stone_slab",0]]);
 Block.setDestroyTime(150,0);
 Block.setShape(150, 0, 0, 0, 1, 0.2, 1);
+
+/* Networking */
+//TODO
