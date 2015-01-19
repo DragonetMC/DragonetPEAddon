@@ -30,6 +30,9 @@ public class DragonetPEService extends Service {
 			int port = intent.getExtras().getInt("port");
 			Toast.makeText(this, "DragonetPEAddon: Connecting to " + ip + ":" + port + "... ", Toast.LENGTH_SHORT).show();
 			break;
+		case DragonetPEActions.DISCONNECT_SERVER:
+			
+			break;
 		}
 	}
 	

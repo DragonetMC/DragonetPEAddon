@@ -1,4 +1,4 @@
-package org.dragonet.android.forward;
+package org.dragonet.android.addon.forward;
 
 import android.app.Service;
 import android.content.Intent;
