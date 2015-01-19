@@ -1,6 +1,19 @@
-/* mod made by Creeperface01 
+/*
 
- ModPE.setItem(000,"texture",0,"name"); 
+ DRAGONET MODPE SCRIPT ADDON
+ (Released under GNU LGPL v3 Licence. )
+ 
+ @autor Creeperface01 
+ @website http://dragonet.org/
+ @github http://github.com/DragonetMC
+
+*/
+
+
+/*
+MODPE API DOCUMENTATIONS
+
+ModPE.setItem(000,"texture",0,"name"); 
 Item.addShapedRecipe(4,1,0,["   ","   ","   "],[" ", ,0," ", ,0]);
 ModPE.setFoodItem(ID,imageX,imageY,halfHeartsHealed,"name");
 Player.addItemCreativeInv(407,1,0);
