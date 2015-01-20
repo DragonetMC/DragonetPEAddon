@@ -29,7 +29,7 @@ Block.setLightLevel(id,level);
 Block.setRenderLayer(id,renderLayer);
 [["bottom texture",type],["top texture",type],["south texture",type],["north texture",type],["west texture",type],["east texture",type]]
 */
-
+function DragonetPE_Item_load(){
 // items
 ModPE.setItem(356,"repeater",0,"redstone repeater");
 ModPE.setItem(346,"fishing_rod_uncast",0,"fishing rod");
@@ -703,18 +703,4 @@ Block.setShape(149, 0, 0, 0, 1, 0.2, 1);
 Block.defineBlock(150,"Redstone Coparator (On)",[["stone_slab",0],["redstone_dust_line_overlay",0],["stone_slab",0],["stone_slab",0],["stone_slab",0],["stone_slab",0]]);
 Block.setDestroyTime(150,0);
 Block.setShape(150, 0, 0, 0, 1, 0.2, 1);
-
-/* Networking */
-//Contants
-var BROADCAST_NAME = "dragonetpe.BROADCAST";
-var ACTION_START_SERVICE = 1;
-var ACTION_CONNECT_SERVER = 2;
-var ACTION_DISCONNECT_SERVER = 3;
-
-var mainActivity = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
-var context = mainActivity.getApplicationConext();
-
-//Initialize DragonetPE Networking Service
-var intentStartService = new android.content.Intent(BROADCAST_NAME);
-intentStartService.getExtras().putInt("action", ACTION_START_SERVICE);
-context.startService(intentStartService);
+}
