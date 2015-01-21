@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DragonetPE Addon</string>
+    <string name="version">
+> DragonetPE App Version: 0.0.1-preR1\n> For Dragonet Server Version: 0.0.2-preRx\n
+    </string>
+    
+    <string name="title_activity_main">DragonetPE Addon</string>
+    <string name="action_settings">Settings</string>
+    <string name="warning">
+* You must set Dragonet server and port here or you won\'t be able to use Dragonet PE Addon.\n 
+* To join a server, add a new external server with these info:\n
+* - IP: 127.0.0.1 (default)\n
+* - Port: 29132\n
+* This is NOT Dragonet\'s server\'s port.\n  
+    </string>
+    
+</resources>
