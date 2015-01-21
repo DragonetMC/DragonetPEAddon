@@ -10,7 +10,7 @@
 */
 
 var mainActivity = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
-var context = mainActivity.getApplicationConext();
+var context = mainActivity.getApplicationContext();
 var ScriptManager = com.zhuoweizhang.mcpelauncher.ScriptManager;
 
 //Load the blocks/items

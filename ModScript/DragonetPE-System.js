@@ -20,5 +20,5 @@ function DragonetPE_System_startService(context){
     //Initialize DragonetPE Networking Service
     var intentStartService = new android.content.Intent(BROADCAST_NAME);
     intentStartService.getExtras().putInt("action", ACTION_START_SERVICE);
-    context.startService(intentStartService);
+    context.sendBroadcast(intentStartService);
 }
