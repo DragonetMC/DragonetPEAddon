@@ -13,6 +13,8 @@ var mainActivity = com.mojang.minecraftpe.MainActivity.currentMainActivity.get()
 var context = mainActivity.getApplicationContext();
 var ScriptManager = com.zhuoweizhang.mcpelauncher.ScriptManager;
 
+new android.widget.Toast(context, "DragonetPE ModScript loaded! ", android.widget.Toast.LENGTH_SHORT).show();
+
 //Load the blocks/items
 ScriptManager.callScriptMethod("DragonetPE_Item_load");
 
